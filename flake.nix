@@ -9,7 +9,7 @@
     let
       pkgs = nixpkgs.legacyPackages.${system};
       tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-minimal latex-bin latexmk;
+          inherit (pkgs.texlive) scheme-basic latex-bin latexmk fontspec;
       };
     in rec {
       packages = {
@@ -18,13 +18,19 @@
           src = self;
           buildInputs = [ pkgs.coreutils tex ];
           phases = ["unpackPhase" "buildPhase" "installPhase"];
+          #buildPhase = ''
+          #  export PATH="${pkgs.lib.makeBinPath buildInputs}";
+          #  mkdir -p .cache/texmf-var
+          #  env TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var \
+          #    latexmk -interaction=nonstopmode -pdf -lualatex \
+          #    document.tex
+          #'';
           buildPhase = ''
             export PATH="${pkgs.lib.makeBinPath buildInputs}";
             mkdir -p .cache/texmf-var
             env TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var \
-              latexmk -interaction=nonstopmode -pdf -lualatex \
-              document.tex
-          '';
+                latexmk -interaction=nonstopmode -pdf -lualatex document.tex
+            '';
           installPhase = ''
             mkdir -p $out
             cp document.pdf $out/

@@ -1,70 +1,21 @@
 \documentclass[12pt]{article}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[T2A]{fontenc}
+% ИСПРАВЛЕННЫЙ PREAMBLE с необходимыми пакетами
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel}
-\usepackage{amsmath,amsfonts,amssymb,bm}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
 
-\setlength{\textwidth}{168mm}%210
-\setlength{\textheight}{210mm}%297
+% Геометрия страницы
+\setlength{\textwidth}{168mm}
+\setlength{\textheight}{210mm}
 \topmargin -10mm
 \oddsidemargin  -1mm
 \evensidemargin -1mm
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb}
-\usepackage{latexsym}
-\usepackage{slashed}
-\usepackage{authblk}
-\usepackage{xcolor}
-\usepackage{hyperref}
-
-\usepackage{cancel}
-\usepackage{indentfirst}
-\usepackage{graphicx}% Include figure filesF
-\usepackage{epstopdf}
-%\graphicspath{{figs/}}
-\usepackage{dcolumn}% Align table columns on decimal point
-\usepackage{bm}% bold math
-\usepackage{lipsum}
-\usepackage{slashed}
-\usepackage{enumitem}
-\usepackage{txfonts}
-\usepackage{esint}
-\usepackage{xcolor}
-\usepackage{mathtools}
-\usepackage{transparent}
-\usepackage{upgreek}
-\usepackage{tabularx}
-\usepackage{csquotes}
-\usepackage{siunitx}
-%\usepackage{geometry}
-%\geometry{a4paper,total={178mm,257mm},right=15mm,left=15mm,bottom=20mm,top=20mm}
-%\usepackage[font=footnotesize,labelfont=bf,labelsep=period]{caption}
-% \usepackage[bookmarks=true,colorlinks=true, allcolors=black,linkcolor=black]{hyperref}
-%\usepackage{tikz}
-%\usepackage[compat=1.1.0]{tikz-feynman}
-%\tikzfeynmanset{/tikzfeynman/warn luatex=false}
-%\usetikzlibrary{arrows,automata}
-%\usetikzlibrary{matrix}
-%\addto\captionsenglish{\renewcommand{\figurename}{Fig.}}
-
-%\pagestyle{plain}%номера страниц
-%\usepackage{setspace}%Полуторный
-%\onehalfspacing% межстрочный интервал
-%\doublespacing
-
-%\usepackage{wrapfig}
-% \usepackage[backend=biber,style=ieee,articletitle=false]{biblatex}
-%%\usepackage[backend=biber, style=phys,articletitle=false,biblabel=brackets,
-%%            chaptertitle=false,pageranges=false]{biblatex}
-%%\ExecuteBibliographyOptions[misc]{eprint=true}
-%%\ExecuteBibliographyOptions[online]{eprint=true}
-%%\addbibresource{main.bib}
-
-%\usepackage{definitions}
 
 \begin{document}
-	\title{Hawking Radiation and Primordial Black Holes}
+	\title{Twisted States in Higgs Boson Decay into Fermion Antifermion Pair}
 	
 	\author{Borodin Nikita}
 	
@@ -74,16 +25,35 @@
 	\newpage
 	\section{Introduction}
 	
-	\begin{itemize}
-		\item  \(e^{i \vec{k} \cdot \vec{x}}\)
-		\item  \(\frac{e^{i k \cdot r}}{r}\)\\
-	\end{itemize}
+	\section*{\textbf{Problem Statement}}
+	
+	Consider the decay of the Higgs boson into a pair of fermions \( f \bar{f} \).
+	The quantum state of the fermions is given by:
+	\[
+	|f \bar{f}\rangle = \int \frac{d\vec{p}_1}{(2\pi)^3 \sqrt{2E_1}} \frac{d\vec{p}_2}{(2\pi)^3 \sqrt{2E_2}} \psi(\vec{p}_1, s_1; \vec{p}_2, s_2) |f(\vec{p}_1, s_1), \bar{f}(\vec{p}_2, s_2)\rangle,
+	\]
+	where \( \psi \) is the two-particle wave function of fermions in momentum representation, \( s_i \) are the spin 4-vectors. In the rest frame of the fermion \( s = (0, \boldsymbol{\xi}) \).
+	
+	\begin{enumerate}
+		\item Find \( \psi \) using the matrix element:
+		\[
+		\langle f(\vec{p}_1, s_1), \bar{f}(\vec{p}_2, s_2) | S - 1 | \text{Higgs boson} \rangle.
+		\]
+		
+		\item Now one can calculate the wave function in coordinate representation:
+		\[
+		\psi(\vec{x}_1, \vec{x}_2) = \int \frac{d\vec{p}_1}{(2\pi)^3} \frac{d\vec{p}_2}{(2\pi)^3} \widetilde{\psi}(\vec{p}_1, s_1; \vec{p}_2, s_2) e^{+i(\vec{p}_1 \vec{x}_1 + \vec{p}_2 \vec{x}_2)}.
+		\]
+		Show that \( \psi(\vec{x}_1, \vec{x}_2) \) depends on the coordinate difference \( \vec{r} = \vec{x}_1 - \vec{x}_2 \) and calculate the wave function \( \psi(\vec{r}) \).
+		
+		\item Expand the wave function in a series of spherical harmonics and investigate their behavior as a function of \( \boldsymbol{\xi}_1 \cdot \hat{\vec{r}}, \boldsymbol{\xi}_2 \cdot \hat{\vec{r}}, \boldsymbol{\xi}_1 \cdot \boldsymbol{\xi}_2 \). Give an interpretation.
+	\end{enumerate}
 	
 	\section{Find wavefunction}
 	\indent Using the Fourier transform
 	\[
 	\begin{aligned}
-		& \psi\left(\vec{r}_{1}, \vec{r}_{2}\right)=\int \frac{d^{3} p_{1} d^{3} p_{2} \psi\left(\vec{p}_{1} \vec{p}_{2}\right)}{\left.(2 \pi)^{6} \sqrt{2 E_{p} r_{1}}\right) } e^{i(...)} \\
+		& \psi\left(\vec{r}_{1}, \vec{r}_{2}\right)=\int \frac{d^{3} p_{1} d^{3} p_{2} \widetilde{\psi}\left(\vec{p}_{1} \vec{p}_{2}\right)}{\left.(2 \pi)^{6} \sqrt{2 E_{p} r_{1}}\right) } e^{i(...)} \\
 		& =\int \frac{d^{2} p_1 d^{2} p_2}{\left(2 \pi \right)^3 } \langle f \overline{f} \mid S-1\rangle e^{i(...)}\\
 		& =\int \frac{d^{3}p}{(2 \pi^3)} \frac{1}{2 E_p} \frac{m_f}{v} \overline{u}(\vec{p_1},\vec{s_1}) u(-\vec{p_2},\vec{s_2}) e^{i(...)}
 	\end{aligned}
@@ -91,7 +61,7 @@
 	
 	\[
 	\begin{aligned}
-		S \mid i \rangle = \mid f \rangle = ...+ \int \frac{d^3 p_1 d^3 p_2}{(2 \pi)^6} \frac{\psi\left( \vec{p_1}, \vec{p_2}\right) }{\sqrt{2 E_1 2 E_2}} \mid \vec{p_1}, \vec{s_1}; \vec{p_2}, \vec{s_2} \rangle + ...
+		S \mid i \rangle = \mid f \rangle = ...+ \int \frac{d^3 p_1 d^3 p_2}{(2 \pi)^6} \frac{\widetilde{\psi}\left( \vec{p_1}, \vec{p_2}\right) }{\sqrt{2 E_1 2 E_2}} \mid \vec{p_1}, \vec{s_1}; \vec{p_2}, \vec{s_2} \rangle + ...
 	\end{aligned}
 	\]
 	
@@ -160,7 +130,7 @@
 	Using the spherical system of coordinates
 	\[
 	\begin{aligned}
-		\int \frac{d^3 p_1 d^3 p_2}{(2 \pi)^6} \left( 2 \pi \right)^4 \delta^4 \left(P_H - P_1 - P_2 \right) i \frac{m_f}{v} \overline{u}(p_1 s_1) v(p_2 s_2) \Big|_{\vec{p_2} = -\vec{p_1}} e^{i\vec{p_1}  \cdot \vec{r_1} + i \vec{p_1} \vec{r_2}}
+		\int \frac{d^3 p_1 d^3 p_2}{(2 \pi)^6}  \delta^4 \left(P_H - E_{p_1} - E_{p_2} \right) i \frac{m_f}{v} \overline{u}(p_1 s_1) v(p_2 s_2) \Big|_{\vec{p_2} = -\vec{p_1}} e^{i\vec{p_1}  \cdot \vec{r_1} + i \vec{p_1} \vec{r_2}}
 	\end{aligned}
 	\]
 	
@@ -168,18 +138,255 @@
 	d^3 P_1 = \underbrace{P_1^2 dP_1}_{p_1 E_1 dE_1} d \Omega_{p_1} 
 	\]
 	
-	\section{Fermion Antifermion product}
-	From Dirac equation for fermion and antifermion 
-	\section{Conclusion}
-	\indent In this work, the various masses of the primordial black holes and their lifetimes were calculated. The work also investigated what would happen if there were a  black hole in the center of the Earth. It turned out that it would not be able to absorb all the matter around it. The maximum mass of a black hole that can have and still evaporate in the presence of the cosmic microwave background was calculated. The photon and neutrino energies of the primary black holes were calculated and compared with the range of measured energies of existing experimental facilities. It turned out that we need a new generation of installations with better resolution to study photons and neutrinos.
+	\[
+	E^2 = p^2 + m^2, \quad E dE = p dp
+	\]
 	
+	\[
+	p_1^2 dp_1 = p_1 p_1 dp_1 = p_1 E_1 dE_1 = \sqrt{E_1^2 -m^2} E_1 dE_1
+	\]
+	Using the property of delta function: $\int f(x) \delta(g(x)) = \sum_i \frac{f(x_i)}{|g'(x_i)|}$ and $g\equiv m_H - 2E_1\equiv g(E_1)$, $g'(E_1)=-2$
+	\[
+	\begin{aligned}
+	&\frac{1}{(2 \pi)^6} \int d \Omega dE_1 \sqrt{E_1^2 - m^2} E_1 \delta^4 (m_H - 2 E_1) i \frac{m_f}{v} \overline{u}(\vec{p}_1, s_1) v(-\vec{p}_1, s_2)  \\
+	&=\frac{1}{(2 \pi)^6} \frac{1}{2} \int d \Omega  \sqrt{(\frac{m_H}{2})^2 - m^2} \frac{m_H}{2} i \frac{m_f}{v} \overline{u}(\vec{p}_1, s_1) v(-\vec{p}_1, s_2) \Big|_{|\vec{p}_1| = \sqrt{\left( \frac{m_H}{2}\right)^2 - m^2}}
+	\end{aligned}
+	\]
+	We have reached this expression
+	\[
+	\psi(\vec{r}_1 - \vec{r}_2; s_1, s_2) \sim \int d \theta \sin \theta d \phi \underbrace{f(\theta, \phi)}_{\overline{u}v} e^{i |\vec{p}| \underbrace{(\vec{r}_1 - \vec{r}_2)}_{\equiv \vec{r}} \cdot \hat{n}}
+	\]
+	where $\hat{n} = \frac{\vec{p}}{|\vec{p}|}$
+	
+	\section{Fermion Antifermion product}
+	
+	From Dirac's equation for fermion
+	
+	\[
+	u(p) = 
+	\begin{pmatrix}
+		\sqrt{E_p + m_f} \chi(\vec{s_1})\\
+		\sqrt{E_p - m_f} (\overline{\sigma} \cdot \hat{n}_p) \chi(\vec{s_2})\\
+	\end{pmatrix}
+	\]
+	
+	and antifermion $v(p,s)=c \gamma^0 u^* (p,s)$
+	
+	\[
+	v(-p) = 
+	\begin{pmatrix}
+		\sqrt{E_p - m_f} (\overline{\sigma} \cdot \hat{n}_{-p}) \eta(\vec{s_2})\\
+		\sqrt{E_p + m_f} \eta(\vec{s_2})\\
+	\end{pmatrix}
+	\]
+	
+	taking in consideration $\hat{n}_{-p} = - \hat{n}_p$ and $\eta{\hat{s}_2} = i \sigma_y \chi^*(\hat{s}_2)$
+	
+	And for 
+	\[
+	\chi(\vec{s_1}) = 
+	\begin{pmatrix}
+		\cos \frac{\theta}{2}\\
+		\sin \frac{\theta}{2} e^{i \phi}\\
+	\end{pmatrix}
+	\]
+	
+	we get
+	\[
+	\eta(\overline{s}_2) = i \sigma_y \chi^* (\overline{s}_1)
+	= 
+	\begin{pmatrix}
+		0 & -i \\
+		i & 0
+	\end{pmatrix}
+	\cdot
+	\begin{pmatrix}
+		\cos \frac{\theta_2}{2} \\
+		\sin \frac{\theta_2}{2} e^{-i \phi_2}
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-i \sin \frac{\theta_2}{2} e^{-i \phi_2}\\
+		i \cos \frac{\theta_2}{2} 
+	\end{pmatrix}
+	\]
+	
+	Substitute in our 
+	\[
+	\overline{u} = u^{\dagger} \gamma^0 = (\sqrt{E_p + m_f} \chi^{\dagger}, -\sqrt{E_p - m_f} \chi^{\dagger} (\overline{\sigma} \cdot \hat{n}_p))
+	\]
+	
+	\[
+	v =
+	\begin{pmatrix}
+		\sqrt{E_p - m_f} (\overline{\sigma} \cdot \hat{n}_{-p}) \eta(\vec{s_2})\\
+		\sqrt{E_p + m_f} \eta(\vec{s_2})\\
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		-\sqrt{E_p - m_f} (\overline{\sigma} \cdot \hat{n}_p) \eta(\vec{s_2})\\
+		\sqrt{E_p + m_f} \eta(\vec{s_2})\\
+	\end{pmatrix}
+	\]
+    \[
+    \overline{u} v = - 2 \sqrt{(E_p + m_f)(E_p - m_f)} \chi^{\dagger} (\overline{\sigma} \cdot \hat{n}_p) \eta
+    \]
+    
+    \[
+    \chi^{\dagger} = (\cos \frac{\theta}{2}, \sin \frac{\theta}{2} e^{-i \phi}) \\
+    \eta = 
+    \begin{pmatrix}
+    	-i \sin \frac{\theta}{2} e^{-i \phi}\\
+    	i \cos \frac{\theta}{2} 
+    \end{pmatrix}    
+    \]
+    
+    Expression for 
+    \[
+    \begin{aligned}
+    \overline{\sigma} \cdot \hat{n}_p &= \sigma_x n_x + \sigma_y n_y + \sigma_z n_z 
+    &= 
+    \begin{pmatrix}
+    	n_z & n_x - i n_y \\
+    	n_x + i n_y & -n_z
+    \end{pmatrix}
+    \end{aligned}
+    \]
+    
+    \[
+    \hat{n}_p = (\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)
+    \]
+    
+    \[
+    \overline{s}_i = (\sin \theta_i \cos \phi_i, \sin \theta_i \sin \phi_i, \cos \theta_i)
+    \]
+    
+    \[
+    \overline{\sigma} \cdot \hat{n}_p = 
+     \begin{pmatrix}
+    	\cos \theta & \sin \theta \cos \phi - i \sin \theta \sin \phi \\
+    	\sin \theta \cos \phi + i \sin \theta \sin \phi & - \cos \theta \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    	\cos \theta & \sin \theta e^{-i \phi} \\
+    	\sin \theta e^{i \phi} & - \cos \theta \\
+    \end{pmatrix}
+    \]
+    
+   	\[
+	   (\overline{\sigma} \cdot \hat{n}_p)\eta
+	   = 
+	   \begin{pmatrix}
+	   	\cos \theta & \sin \theta e^{-i \phi} \\
+	   	\sin \theta e^{i \phi}& -\cos \theta
+	   \end{pmatrix}
+	   = 
+	   \begin{pmatrix}
+	   	-i \sin \frac{\theta}{2} e^{-i \phi}\\
+	   	i \cos \frac{\theta}{2}
+	   \end{pmatrix}
+	   =
+	   \begin{pmatrix}
+	   	-i \cos \theta \sin \frac{\theta}{2} e^{-i \phi} + i \sin \theta \cos \frac{\theta}{2} e^{-i \phi}\\
+	   	-i \sin \theta \sin \frac{\theta}{2} + i \cos \theta \cos \frac{\theta}{2}
+	   \end{pmatrix}
+	   =
+	   \begin{pmatrix}
+	   	i \sin \frac{\theta}{2}\\
+	   	i \cos \frac{3 \theta}{2}
+	   \end{pmatrix}
+	  \]
+	 (Could be mistake here - $\textbf{CHECK}$)
+	 \[
+	 \begin{aligned}
+	 \chi^{\dagger}(\vec{s}_1) \hat{n} \vec{\sigma} \eta({\vec{s}_2}) &= \left[ \cos \frac{\theta_1}{2} \binom{1}{0} + \sin \frac{\theta_1}{2} e^{-i \phi_1} \binom{1}{0}\right] \\
+	 &\times \left[ \cos \frac{\theta_2}{2} \binom{\cos \theta_p}{\sin \theta_p} + \sin \frac{\theta_2}{2} e^{i \phi_2} \binom{\sin \theta_p e^{-i \phi}}{-\cos \theta_p}  \right]^{T}\\
+	 &= \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \cos \theta_p + \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \sin \theta_p e^{-i \phi_p} \\
+	 &+ \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \sin \theta_p e^{-i \phi_p} e^{-i \phi_1} - \sin \frac{\theta_1}{2} \sin \frac{\theta_1}{2} e^{i (\phi_2 - \phi_1)} \cos \theta_p
+	 \end{aligned}
+	 \]
+	\section{Calculating integral in spherical coordinates}
+	
+	\[
+	\begin{aligned}
+	&\int d \hat{n} \chi^{\dagger}(\vec{s}_1) \hat{n} \vec{\sigma} \eta({\vec{s}_2}) =\int_0^{2 \pi} d \phi_p \int_0^{\pi} d \theta_p \sin \theta_p e^{i \vec{p} \cdot \vec{r}} \times\\
+	&\left[\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \cos \theta_p + \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \sin \theta e^{-i \phi_p} + \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \sin \theta_p e^{i \phi_p} e^{-i \phi_1} - \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} \cos \theta_p  \right]
+	\end{aligned}
+	\]
+	Some expressions for spherical harmonics
+	\begin{align}
+		Y_0^0 &= \frac{1}{2} \sqrt{\frac{1}{\pi}} &  Y_1^1 &= -\frac{1}{2} \sqrt{\frac{3}{2 \pi}} \sin \theta e^{i \phi} \label{eq:first} \\
+		Y_1^0 &= \frac{1}{2} \sqrt{\frac{3}{\pi}} \cos \theta & Y_1^{-1}&= \frac{1}{2} \sqrt{\frac{3}{2 \pi}} \sin \theta e^{-i \phi} \label{eq:second}
+	\end{align}
+	
+	\begin{equation}
+		Y_{\ell}^{m}{}^{*}(\theta,\varphi) = (-1)^{-m}Y_{\ell}^{-m}(\theta,\varphi)
+	\end{equation}
+	
+%	\begin{equation}
+%		{\displaystyle Y_{\ell }^{m}{}^{*}(\theta ,\varphi )=(-1)^{-m}Y_{\ell }^{-m}(\theta ,\varphi ),} \label{eq:main}
+%	\end{equation}
+	 Using the expression for $e^{i \vec{p} \vec{r}}$ and substituting a trigonometric function for the corresponding spherical harmonic
+	 
+	 \[
+	 \begin{aligned}
+	 	&\int_0^{2 \pi} d \phi_p \int_0^{\pi} d \theta_p \sin \theta_p e^{i \vec{p} \cdot \vec{r}} \sum_{l=0}^{\infty} \sum_{m=-l}^{l} 4 \pi i^l j_l (kr) Y_{l}^{m}(\theta_p,\varphi_p) Y_{l}^{m*}(\theta_r,\varphi_r) \times \\
+	 	&\left[\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \cdot 2 \sqrt{\frac{\pi}{3}} Y_{0}^{1}(\theta_p, \phi_p) \right. \\
+	 	&\quad + \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} Y_{1}^{-1}(\theta_p, \phi_p) \\
+	 	&\quad + (-2) \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} Y_{1}^{1}(\theta_p, \phi_p) \\
+	 	&\left.\quad + (- 2) \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} Y_{1}^{0}(\theta_p, \phi_p) \right]
+	 \end{aligned}
+	 \]
+	 
+	 
+	 Applying orthogonality ${\displaystyle \int _{\theta =0}^{\pi }\int _{\varphi =0}^{2\pi }Y_{\ell }^{m}\,Y_{\ell '}^{m'}{}^{*}\,d\Omega =\delta _{\ell \ell '}\,\delta _{mm'},}$
+	 
+	 ($\textbf{MISTAKE}$ I forgot that orthogonality uses $Y_{1}^{-1*}(\theta_p,\varphi_p)$ instead of $Y_{1}^{-1}(\theta_p,\varphi_p)$. Must add corresponding $(-1)^m$ to each term )
+	 \[
+	 \begin{aligned}
+	 	4 \pi j_1 (kr) \int_0^{2 \pi} d \phi_p \int_{0}^{2 \pi} d \theta_p \sin \theta_p
+	 	&\left[ 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \right. \\
+	 	&\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \\
+	 	&\quad + 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \\
+	 	&\quad \times \underbrace{Y_{1}^{-1}(\theta_p,\varphi_p) Y_{1}^{-1}(\theta_p,\varphi_p)}_{=1}  Y_{1}^{-1*}(\theta_r,\varphi_r)\\
+	 	&\quad + (-2) \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \\
+	 	&\quad \times \underbrace{Y_{1}^{1}(\theta_p,\varphi_p) Y_{1}^{1}(\theta_p,\varphi_p)}_{=1} Y_{1}^{1*}(\theta_r,\varphi_r) \\
+	 	&\quad + (-2) \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} \\
+	 	&\left.\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \right]
+	 \end{aligned}
+	 \]
+
+     \[
+	 \begin{aligned}
+	 	4 \pi j_1 (kr) \int_0^{2 \pi} d \phi_p \int_{0}^{2 \pi} d \theta_p \sin \theta_p
+	 	&\left[ 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \right. \\
+	 	&\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \\
+	 	&\quad - 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \\
+	 	&\quad \times \underbrace{Y_{1}^{-1}(\theta_p,\varphi_p) Y_{1}^{-1*}(\theta_p,\varphi_p)}_{=1}  Y_{1}^{-1*}(\theta_r,\varphi_r)\\
+	 	&\quad - (-2) \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \\
+	 	&\quad \times \underbrace{Y_{1}^{1}(\theta_p,\varphi_p) Y_{1}^{1*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{1*}(\theta_r,\varphi_r) \\
+	 	&\quad + (-2) \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} \\
+	 	&\left.\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \right]
+	 \end{aligned}
+	 \]
+
+    \section{Using the dot products}
+    \[
+    \begin{aligned}
+    &\left[\left(-2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2}\right) {Y^*_{1}}^{-1}(\theta_r, \phi_r) \right. \\
+    &\quad + \left(2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2}  - 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i(\phi_2 - \phi_1)}\right) {Y^*_{1}}^{0}(\theta_r, \phi_r) \\
+    &\quad + \left.\left(2 \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \right){Y^*_{1}}^{1}(\theta_r, \phi_r)  \right]
+    \end{aligned}
+    \]
+	\section{Conclusion}
 	
 	%\LaTeX{} \cite{MacGibbon_1998}
 	%\bibliographystyle{unsrt}
 	%\bibliography{ref}
 	
-	\LaTeX{} \cite{MacGibbon_1998} is a set of macros built atop \TeX{} \cite{MacGibbon_1998}.
-	\bibliographystyle{plain} % We choose the "plain" reference style
-	\bibliography{ref} % Entries are in the refs.bib file
+	%\LaTeX{} \cite{MacGibbon_1998} is a set of macros built atop \TeX{} \cite{MacGibbon_1998}.
+	%\bibliographystyle{plain} % We choose the "plain" reference style
+	%\bibliography{ref} % Entries are in the refs.bib file
 	
 \end{document}
