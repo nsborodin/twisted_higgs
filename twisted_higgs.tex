@@ -6,6 +6,7 @@
 \usepackage[russian,english]{babel}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{mathtools}
+\usepackage{bm}
 
 % Геометрия страницы
 \setlength{\textwidth}{168mm}
@@ -166,7 +167,7 @@
 	u(p) = 
 	\begin{pmatrix}
 		\sqrt{E_p + m_f} \chi(\vec{s_1})\\
-		\sqrt{E_p - m_f} (\overline{\sigma} \cdot \hat{n}_p) \chi(\vec{s_2})\\
+		\sqrt{E_p - m_f} (\overline{\sigma} \cdot \hat{n}_p) \chi(\vec{s_1})\\
 	\end{pmatrix}
 	\]
 	
@@ -186,28 +187,29 @@
 	\[
 	\chi(\vec{s_1}) = 
 	\begin{pmatrix}
-		\cos \frac{\theta}{2}\\
-		\sin \frac{\theta}{2} e^{i \phi}\\
+		\cos \frac{\theta_1}{2}\\
+		\sin \frac{\theta_1}{2} e^{i \phi_1}\\
 	\end{pmatrix}
 	\]
 	
-	we get
-	\[
-	\eta(\overline{s}_2) = i \sigma_y \chi^* (\overline{s}_1)
+	we get (keeping in mind that $\bm{p}_1 \upuparrows \bm{s}_1$ and $\bm{p}_2 \mathrel{\uparrow\downarrow} \bm{s}_2$ we get the following substitution $(\theta_2, \phi_2) \rightarrow (\pi - \theta_2, \phi_2 + \pi)$)
+	
+    \[
+	\eta(\bm{s}_2) = i \sigma_y \chi^* (\bm{s}_2)
 	= 
 	\begin{pmatrix}
-		0 & -i \\
-		i & 0
+		0 & 1 \\
+		-1 & 0
 	\end{pmatrix}
 	\cdot
 	\begin{pmatrix}
-		\cos \frac{\theta_2}{2} \\
-		\sin \frac{\theta_2}{2} e^{-i \phi_2}
+		\cos \frac{\pi - \theta_2}{2} \\
+		\sin \frac{\pi - \theta_2}{2} e^{-i \left(\phi_2 + \pi\right)}
 	\end{pmatrix}
 	=
 	\begin{pmatrix}
-		-i \sin \frac{\theta_2}{2} e^{-i \phi_2}\\
-		i \cos \frac{\theta_2}{2} 
+		  - \cos \frac{\theta_2}{2} e^{- i \phi_2}\\
+		- \sin \frac{\theta_2}{2} 
 	\end{pmatrix}
 	\]
 	
@@ -233,12 +235,14 @@
     \]
     
     \[
-    \chi^{\dagger} = (\cos \frac{\theta}{2}, \sin \frac{\theta}{2} e^{-i \phi}) \\
-    \eta = 
+    \begin{aligned}
+    &\chi^{\dagger} (\bm{s}_1) = (\cos \frac{\theta_1}{2}, \sin \frac{\theta_1}{2} e^{-i \phi_1}) \\ 
+    &\eta(\bm{s}_2) = 
     \begin{pmatrix}
-    	-i \sin \frac{\theta}{2} e^{-i \phi}\\
-    	i \cos \frac{\theta}{2} 
-    \end{pmatrix}    
+		- \cos \frac{\theta_2}{2} e^{-i \phi_2}\\
+		- \sin \frac{\theta_2}{2} 
+	\end{pmatrix}
+    \end{aligned}
     \]
     
     Expression for 
@@ -254,7 +258,7 @@
     \]
     
     \[
-    \hat{n}_p = (\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)
+    \hat{n}_p = (\sin \theta_{p} \cos \phi_p, \sin \theta_p \sin \phi_p, \cos \theta_p)
     \]
     
     \[
@@ -264,54 +268,55 @@
     \[
     \overline{\sigma} \cdot \hat{n}_p = 
      \begin{pmatrix}
-    	\cos \theta & \sin \theta \cos \phi - i \sin \theta \sin \phi \\
-    	\sin \theta \cos \phi + i \sin \theta \sin \phi & - \cos \theta \\
+    	\cos \theta_p & \sin \theta_p e^{-i \phi_p} \\
+    	\sin \theta_p e^{i \phi_p} & - \cos \theta_p \\
     \end{pmatrix}
     =
     \begin{pmatrix}
-    	\cos \theta & \sin \theta e^{-i \phi} \\
-    	\sin \theta e^{i \phi} & - \cos \theta \\
+    	\cos \theta_p & \sin \theta_p e^{-i \phi_p} \\
+    	\sin \theta_p e^{i \phi_p} & - \cos \theta_p \\
     \end{pmatrix}
     \]
-    
-   	\[
-	   (\overline{\sigma} \cdot \hat{n}_p)\eta
+
+    \[
+	   (\bm{\sigma} \cdot \hat{n}_p)\eta(\bm{s}_2)
 	   = 
 	   \begin{pmatrix}
-	   	\cos \theta & \sin \theta e^{-i \phi} \\
-	   	\sin \theta e^{i \phi}& -\cos \theta
+	   	\cos \theta_p & \sin \theta_p e^{-i \phi_p} \\
+	   	\sin \theta_p e^{i \phi_p}& -\cos \theta_p
 	   \end{pmatrix}
-	   = 
 	   \begin{pmatrix}
-	   	-i \sin \frac{\theta}{2} e^{-i \phi}\\
-	   	i \cos \frac{\theta}{2}
+		- \cos \frac{\theta_2}{2} e^{-i \phi_2}\\
+		- \sin \frac{\theta_2}{2} 
 	   \end{pmatrix}
 	   =
-	   \begin{pmatrix}
-	   	-i \cos \theta \sin \frac{\theta}{2} e^{-i \phi} + i \sin \theta \cos \frac{\theta}{2} e^{-i \phi}\\
-	   	-i \sin \theta \sin \frac{\theta}{2} + i \cos \theta \cos \frac{\theta}{2}
-	   \end{pmatrix}
-	   =
-	   \begin{pmatrix}
-	   	i \sin \frac{\theta}{2}\\
-	   	i \cos \frac{3 \theta}{2}
-	   \end{pmatrix}
-	  \]
-	 (Could be mistake here - $\textbf{CHECK}$)
-	 \[
-	 \begin{aligned}
-	 \chi^{\dagger}(\vec{s}_1) \hat{n} \vec{\sigma} \eta({\vec{s}_2}) &= \left[ \cos \frac{\theta_1}{2} \binom{1}{0} + \sin \frac{\theta_1}{2} e^{-i \phi_1} \binom{1}{0}\right] \\
-	 &\times \left[ \cos \frac{\theta_2}{2} \binom{\cos \theta_p}{\sin \theta_p} + \sin \frac{\theta_2}{2} e^{i \phi_2} \binom{\sin \theta_p e^{-i \phi}}{-\cos \theta_p}  \right]^{T}\\
-	 &= \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \cos \theta_p + \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \sin \theta_p e^{-i \phi_p} \\
-	 &+ \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \sin \theta_p e^{-i \phi_p} e^{-i \phi_1} - \sin \frac{\theta_1}{2} \sin \frac{\theta_1}{2} e^{i (\phi_2 - \phi_1)} \cos \theta_p
-	 \end{aligned}
-	 \]
+      - \cos \frac{\theta_2}{2} e^{-i \phi_2}
+      \begin{pmatrix}
+      \cos \theta_p \\
+      \sin \theta_p e^{i \phi_p}
+      \end{pmatrix}
+      - \sin \frac{\theta_2}{2}
+      \begin{pmatrix}
+      \sin \theta_p e^{-i \phi_p}\\
+      - \cos \theta_p
+      \end{pmatrix}
+      \]
+
+     \[
+    	 \begin{aligned}
+    	 \chi^{\dagger}(\vec{s}_1) \left(\hat{n}_p \cdot \bm{\sigma}\right) \eta({\vec{s}_2}) &= \left[ \cos \frac{\theta_1}{2} \binom{1}{0} + \sin \frac{\theta_1}{2} e^{-i \phi_1} \binom{0}{1}\right] \\
+    	 &\times \left[ -\cos \frac{\theta_2}{2} e^{-i \phi_2}\binom{\cos \theta_p}{\sin \theta_p e^{i \phi_p}} - \sin \frac{\theta_2}{2}  \binom{\sin \theta_p e^{-i \phi_p}}{-\cos \theta_p}  \right]^{T}\\
+    	 &= -\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_2} \cos \theta_p - \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2}  \sin \theta_p e^{-i \phi_p} \\
+    	 &- \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2}  e^{-i \left(\phi_1 + \phi_2\right)} \sin \theta_p e^{i \phi_p}+ \sin \frac{\theta_1}{2} e^{-i \phi_1} \sin \frac{\theta_2}{2}  \cos \theta_p
+    	 \end{aligned}
+    	 \]
 	\section{Calculating integral in spherical coordinates}
 	
-	\[
+    \[
 	\begin{aligned}
-	&\int d \hat{n} \chi^{\dagger}(\vec{s}_1) \hat{n} \vec{\sigma} \eta({\vec{s}_2}) =\int_0^{2 \pi} d \phi_p \int_0^{\pi} d \theta_p \sin \theta_p e^{i \vec{p} \cdot \vec{r}} \times\\
-	&\left[\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \cos \theta_p + \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \sin \theta e^{-i \phi_p} + \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \sin \theta_p e^{i \phi_p} e^{-i \phi_1} - \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} \cos \theta_p  \right]
+	\int d \hat{n} \chi^{\dagger}(\vec{s}_1)( \hat{n} \cdot \bm{\sigma} )\eta({\vec{s}_2}) &=\int_0^{2 \pi} d \phi_p \int_0^{\pi} d \theta_p \sin \theta_p e^{i \vec{p} \cdot \vec{r}} \times\\
+	&\Bigl[-\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_2} \cos \theta_p - \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2}  \sin \theta_p e^{-i \phi_p} \\
+    &- \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2}  e^{-i \left(\phi_1 + \phi_2\right)} \sin \theta_p e^{\phi_p}+ \sin \frac{\theta_1}{2} e^{-i \phi_1} \sin \frac{\theta_2}{2}  \cos \theta_p  \Bigr]
 	\end{aligned}
 	\]
 	Some expressions for spherical harmonics
@@ -321,7 +326,7 @@
 	\end{align}
 	
 	\begin{equation}
-		Y_{\ell}^{m}{}^{*}(\theta,\varphi) = (-1)^{-m}Y_{\ell}^{-m}(\theta,\varphi)
+		Y_{\ell}^{m}{}^{*}(\theta,\varphi) = (-1)^{m}Y_{\ell}^{-m}(\theta,\varphi)
 	\end{equation}
 	
 %	\begin{equation}
@@ -332,53 +337,202 @@
 	 \[
 	 \begin{aligned}
 	 	&\int_0^{2 \pi} d \phi_p \int_0^{\pi} d \theta_p \sin \theta_p e^{i \vec{p} \cdot \vec{r}} \sum_{l=0}^{\infty} \sum_{m=-l}^{l} 4 \pi i^l j_l (kr) Y_{l}^{m}(\theta_p,\varphi_p) Y_{l}^{m*}(\theta_r,\varphi_r) \times \\
-	 	&\left[\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \cdot 2 \sqrt{\frac{\pi}{3}} Y_{0}^{1}(\theta_p, \phi_p) \right. \\
-	 	&\quad + \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} Y_{1}^{-1}(\theta_p, \phi_p) \\
-	 	&\quad + (-2) \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} Y_{1}^{1}(\theta_p, \phi_p) \\
-	 	&\left.\quad + (- 2) \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} Y_{1}^{0}(\theta_p, \phi_p) \right]
+	 	&\Bigl[-\cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_2} \cdot 2 \ \sqrt{\frac{\pi}{3}} Y_1^0(\theta_p, \phi_p) - \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} \cdot  2 \sqrt{\frac{2\pi}{3}} Y_1^{-1}(\theta_p, \phi_p) \\
+        &+ \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2}  e^{-i \left(\phi_1 + \phi_2\right)} \cdot 2 \sqrt{\frac{2\pi}{3}} Y_1^{1}(\theta_p, \phi_p) + \sin \frac{\theta_1}{2} e^{-i \phi_1} \sin \frac{\theta_2}{2} \cdot 2 \ \sqrt{\frac{\pi}{3}} Y_1^0(\theta_p, \phi_p)   \Bigr]
 	 \end{aligned}
 	 \]
-	 
+
 	 
 	 Applying orthogonality ${\displaystyle \int _{\theta =0}^{\pi }\int _{\varphi =0}^{2\pi }Y_{\ell }^{m}\,Y_{\ell '}^{m'}{}^{*}\,d\Omega =\delta _{\ell \ell '}\,\delta _{mm'},}$
 	 
 	 ($\textbf{MISTAKE}$ I forgot that orthogonality uses $Y_{1}^{-1*}(\theta_p,\varphi_p)$ instead of $Y_{1}^{-1}(\theta_p,\varphi_p)$. Must add corresponding $(-1)^m$ to each term )
-	 \[
-	 \begin{aligned}
-	 	4 \pi j_1 (kr) \int_0^{2 \pi} d \phi_p \int_{0}^{2 \pi} d \theta_p \sin \theta_p
-	 	&\left[ 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \right. \\
-	 	&\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \\
-	 	&\quad + 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \\
-	 	&\quad \times \underbrace{Y_{1}^{-1}(\theta_p,\varphi_p) Y_{1}^{-1}(\theta_p,\varphi_p)}_{=1}  Y_{1}^{-1*}(\theta_r,\varphi_r)\\
-	 	&\quad + (-2) \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \\
-	 	&\quad \times \underbrace{Y_{1}^{1}(\theta_p,\varphi_p) Y_{1}^{1}(\theta_p,\varphi_p)}_{=1} Y_{1}^{1*}(\theta_r,\varphi_r) \\
-	 	&\quad + (-2) \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} \\
-	 	&\left.\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \right]
-	 \end{aligned}
-	 \]
-
+	 
      \[
-	 \begin{aligned}
-	 	4 \pi j_1 (kr) \int_0^{2 \pi} d \phi_p \int_{0}^{2 \pi} d \theta_p \sin \theta_p
-	 	&\left[ 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} \right. \\
-	 	&\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \\
-	 	&\quad - 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} \\
-	 	&\quad \times \underbrace{Y_{1}^{-1}(\theta_p,\varphi_p) Y_{1}^{-1*}(\theta_p,\varphi_p)}_{=1}  Y_{1}^{-1*}(\theta_r,\varphi_r)\\
-	 	&\quad - (-2) \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \\
-	 	&\quad \times \underbrace{Y_{1}^{1}(\theta_p,\varphi_p) Y_{1}^{1*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{1*}(\theta_r,\varphi_r) \\
-	 	&\quad + (-2) \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \left( \phi_2 - \phi_1 \right)} \\
-	 	&\left.\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \right]
-	 \end{aligned}
-	 \]
+    	 \begin{aligned}
+    	 	4 \pi j_1 (kr) \int_0^{2 \pi} d \phi_p \int_{0}^{\pi} d \theta_p \sin \theta_p
+    	 	&\left[ -2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_2} \right. \\
+    	 	&\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \\
+    	 	&\quad +  (-2) \sqrt{\frac{2\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2}  \\
+    	 	&\quad \times \underbrace{Y_{1}^{-1}(\theta_p,\varphi_p) Y_{1}^{-1*}(\theta_p,\varphi_p)}_{=1}  Y_{1}^{-1*}(\theta_r,\varphi_r)\\
+    	 	&\quad + 2 \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i(\phi_1 + \phi_2)} \\
+    	 	&\quad \times \underbrace{Y_{1}^{1}(\theta_p,\varphi_p) Y_{1}^{1*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{1*}(\theta_r,\varphi_r) \\
+    	 	&\quad + 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{-i\phi_1} \\
+    	 	&\left.\quad \times \underbrace{Y_{1}^{0}(\theta_p,\varphi_p) Y_{1}^{0*}(\theta_p,\varphi_p)}_{=1} Y_{1}^{0*}(\theta_r,\varphi_r) \right]
+    	 \end{aligned}
+    	 \]
 
     \section{Using the dot products}
     \[
     \begin{aligned}
-    &\left[\left(-2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2}\right) {Y^*_{1}}^{-1}(\theta_r, \phi_r) \right. \\
+    \psi\left(\theta_r, \phi_r; \theta_1, \phi_1; \theta_2, \phi_2\right) \propto &\left[\left(-2 \sqrt{\frac{2\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} \right) {Y^*_{1}}^{-1}(\theta_r, \phi_r) \right. \\
+    &\quad + \left(-2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_2} + 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{-i\phi_1}\right) {Y^*_{1}}^{0}(\theta_r, \phi_r) \\
+    &\quad + \left.\left(2 \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i (\phi_1 + \phi_2)} \right){Y^*_{1}}^{1}(\theta_r, \phi_r)  \right]
+    \end{aligned}
+    \]
+
+    \[
+    \begin{aligned}
+    \text{old}\left(\theta_r, \phi_r; \theta_1, \phi_1; \theta_2, \phi_2\right) \propto &\left[\left(-2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2}\right) {Y^*_{1}}^{-1}(\theta_r, \phi_r) \right. \\
     &\quad + \left(2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2}  - 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i(\phi_2 - \phi_1)}\right) {Y^*_{1}}^{0}(\theta_r, \phi_r) \\
     &\quad + \left.\left(2 \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \right){Y^*_{1}}^{1}(\theta_r, \phi_r)  \right]
     \end{aligned}
     \]
+
+	The goal is to express the wave function in a compact vector form. The wave function proportional to a sum over spherical harmonics could be written as a dot product involving vector $\vec{C}$
+	\[
+	\psi \propto j_1 (pr) \left(\vec{C} \cdot \hat{r}\right)
+	\]
+	Vector $\vec{C}$ depends on the spin orientation of the fermions, $\vec{s}_1$ and $\vec{s}_2$. We start with the components of $\vec{C}$ derived from the matrix element calculation.
+
+	\subsection{Initial expression for coefficients}
+    In spherical basis
+    \[
+    \begin{aligned}
+    	Y^0_1 (\hat{r}) &= \frac{3}{4 \pi} n_z \\
+    	Y^{\pm1}_{1} (\hat{r}) &= \mp \sqrt{\frac{3}{8 \pi}} (n_x \pm i n_y)
+    \end{aligned}
+    \]
+    where $\hat{r} = (n_x, n_y, n_z)$
+    
+    Rewriting expression as a dot product
+    \[
+    \begin{aligned}
+    	\sum_{m} C_m Y^{m*}_1 &= \sqrt{\frac{3}{4 \pi}} \vec{C} \cdot \vec{t} \\
+    	\sum_{m} C_m Y^{m*}_1 &= A \cdot Y^{* -1}_1 + B \cdot Y^{* 0}_1 + C \cdot Y^{* 1}_1 = \\
+    	&= A \left(- \sqrt{\frac{3}{4 \pi}} (n_x -i n_y)\right) + B \left(- \sqrt{\frac{3}{4 \pi}} n_z \right) + C \left(- \sqrt{\frac{3}{4 \pi}} (n_x + i n_y)\right)
+    \end{aligned}
+    \]
+    
+    Group around $\hat{r}$ components
+    \[
+    \begin{aligned}
+    \sum_{m} C_m Y^{m*}_1 = \sqrt{\frac{3}{4 \pi}} \left( -(A+C) n_x + i(A - C) n_y - B n_z \right)
+    \end{aligned}
+    \]
+    
+    \[
+    \begin{aligned}
+    	C_x &=-(A+C)= 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} - 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \\
+    	C_y &= i(A - C)= -2 i \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} - 2i \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} \\
+    	C_z &= -B = -2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} + 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i(\phi_2 - \phi_1)}
+    \end{aligned}
+    \]
+
+	From the integral over the momentum direction of the decaying particles. we get the following complex coefficients:
+	\[
+	\begin{aligned}
+		&C_x = 2 \sqrt{\frac{\pi}{3}} \left(c_1 s_2 e^{i \phi_2 } - s_1 c_2 e^{-i \phi_1}\right) \\
+		&C_y = -2 i \sqrt{\frac{\pi}{3}} \left(c_1 s_2 e^{i \phi_2} + s_1 c_2 e^{-i \phi_1}\right) \\
+		&C_z = -2 \sqrt{\frac{\pi}{3}} \left(c_1 c_2 - s_1 s_2 e^{i(\phi_2 - \phi_1)}\right) \\		
+	\end{aligned}
+	\]
+
+    \[
+    \begin{aligned}
+        \vec{C} &= \alpha \vec{s}_1 + \beta \vec{s}_2 + \gamma (\vec{s}_1 \times \vec{s}_2) \\
+        C_x &= 2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} - 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} = \\
+        &= \alpha \left(\sin \theta_1 \cos \phi_1\right) + \beta \left(\sin \theta_2 \cos \phi_2\right) + \gamma (s_{1x}  s_{2z} - s_{1z} s_{2y}) \\
+        &= \alpha \left(\sin \theta_1 \cos \phi_1\right) + \beta \left(\sin \theta_2 \cos \phi_2\right) + \gamma (\sin \theta_1 \cos \phi_1 \cos \theta_2 - \cos \theta_1 \sin \theta_2 \sin \phi_2) \\
+        C_y &= -2 i \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i \phi_2} - 2i \sqrt{\frac{2 \pi}{3}} \sin \frac{\theta_1}{2} \cos \frac{\theta_2}{2} e^{-i \phi_1} = \\
+        &= \alpha \left(\sin \theta_1 \sin \phi_1\right) + \beta \left(\sin \theta_2 \sin \phi_2\right) + \gamma (s_{1z}  s_{2x} - s_{1x} s_{2z}) \\
+        &= \alpha \left(\sin \theta_1 \sin \phi_1\right) + \beta \left(\sin \theta_2 \cos \phi_2\right) + \gamma (\cos \theta_1 \sin \theta_2 \cos \phi_2 - \sin \theta_1 \cos \phi_1 \cos \theta_2) \\
+        C_z &= -2 \sqrt{\frac{\pi}{3}} \cos \frac{\theta_1}{2} \cos \frac{\theta_2}{2} + 2 \sqrt{\frac{\pi}{3}} \sin \frac{\theta_1}{2} \sin \frac{\theta_2}{2} e^{i(\phi_2 - \phi_1)} = \\
+        &= \alpha \cos \theta_1 + \beta \cos \theta_2 + \gamma (s_{1x}  s_{2y} - s_{1y} s_{2x}) \\
+        &= \alpha \cos \theta_1 + \beta \cos \theta_2 + \gamma (\sin \theta_1 \cos \phi_1 \sin \theta_2 \sin \phi_2 - \sin \theta_1 \sin \phi_1 \sin \theta_2 \cos \phi_2) \\
+    \end{aligned}
+    \]
+    
+	Here, $c_i = \cos(\theta_i/2)$ and $s_i = \sin(\theta_i/2)$
+	\subsection{Expressing coefficients using spin vector components}
+	The components of the spin vectors are:
+	\[
+	\vec{s}_i = \left(\sin \theta_i \cos \phi_i, \sin \theta_i \sin \phi_i, \cos \theta_i\right) = \left(s_{ix}, s_{iy},s_{iz}\right)
+	\]
+	Some useful half-angle identities:
+	\[
+	c_i^2 = \frac{1 + s_{iz}}{2}, \quad s_i^2 = \frac{1-s_{iz}}{2}, \quad 2 s_i c_i = \sqrt{1 - s^2_{iz}} = \sin \theta_i
+	\]
+	Using these, we can express trigonometric functions of the angles:
+	\[
+	\cos \phi_i = \frac{s_{ix}}{\sin \theta_i} = \frac{s_{ix}}{2 s_i c_i}, \quad \sin \phi_i = \frac{s_{iy}}{\sin \theta_i} = \frac{s_{iy}}{2 s_i c_i} 
+	\]
+
+	\subsubsection{Separating real and imaginary parts}
+	We expand the complex exponent $e^{i \phi} = \cos \phi + i \sin \phi$ and separate the real and imaginary parts of each coefficient.
+
+	\textbf{z-components:} From equation (?), the imaginary part of $C_z$ is:
+	\[
+	\text{Im}(C_x) = 2 \sqrt{\frac{\pi}{3}} s_1 s_2 \sin(\phi_2 - \phi_1)
+	\]
+
+	\[
+	\vec{s}_1 \times \vec{s}_2 = \begin{vmatrix}
+		\vec{i} & \vec{j}  & \vec{k}  \\
+		s_{1x} & s_{1y} & s_{1z} \\
+		s_{2x} & s_{2y} & s_{2z}
+	\end{vmatrix} = \vec{i} (s_{1y} s_{2z} - s_{1z} s_{2y}) - \vec{j} (s_{1x} s_{2z} - s_{1z} s_{2x}) + \vec{k} (s_{1x} s_{2y} - s_{1y} s_{2x})
+	\]
+	z-component of the cross product $\vec{s}_1 \times \vec{s}_2$ is:
+	\[
+	\begin{aligned}
+	(\vec{s}_1 \times \vec{s}_2)_z &= s_{1x} s_{2y} - s_{1y} s_{2x} \\
+	&=(\sin \theta_1 \cos \phi_1)(\sin \theta_2 \sin \phi_2) - (\sin \theta_1 \sin \phi_1)(\sin \theta_2 \cos \phi_2) \\
+	&= \sin \theta_1 \sin \theta_2 \left(\cos \phi_1 \sin \phi_2 - \sin \phi_1 \cos \phi_2\right) \\
+	&= \sin \theta_1 \sin \theta_2 \sin (\phi_2 - \phi_1)
+	\end{aligned}
+	\]
+	Using the identity $\sin \theta_i = 2 s_i c_i,$ we get:
+	\[
+	(\vec{s}_1 \times \vec{s}_2)_z = \left(2 s_1 c_1\right) \left(2 s_1 c_1\right) \sin \left(\phi_2 - \phi_1\right)
+	\]
+	Now, we can express term form $\text{Im}(C_z)$:
+	\[
+	s_1 s_2 \sin \left(\phi_2 - \phi_1\right) = \frac{(\vec{s}_1 \times \vec{s}_2)_z}{4 c_1 c_2}
+	\]
+	Subsitute back into the $\text{Im}(C_z)$:
+	\[
+	\text{Im}(C_z) = 2 \sqrt{\frac{\pi}{3}} \frac{(\vec{s}_1 \times \vec{s}_2)_z}{4 c_1 c_2} = \frac{\sqrt{\pi/3}}{2 c_1 c_2}(\vec{s}_1 \times \vec{s}_2)_z
+	\]
+	\textbf{x- and y-components:} Following a similar procedure for $C_x$ and $C_y$:
+	\[
+	\text{Im}(C_x) = 2 \sqrt{\frac{\pi}{3}} \left(c_1 s_2 \sin \phi_2 + s_1 c_2 \sin \phi_1\right) = \frac{\sqrt{\pi/3}}{c_1 c_2} \left(c_1^2 s_{2y} + c_2^2 s_{1y}\right)
+	\]
+
+	\[
+	\text{Im}(C_y) = -\text{Re}\left(2\sqrt{\frac{\pi}{3}} (c_1s_2e^{i\phi_2} + s_1c_2e^{-i\phi_1})\right) = -2\sqrt{\frac{\pi}{3}}(c_1s_2\cos\phi_2 + s_1c_2\cos\phi_1) = -\frac{\sqrt{\pi/3}}{c_1c_2}(c_1^2s_{2x} + c_2^2s_{1x})
+	\]
+	Replacing $c_i^2 = (1+s_{iz})/2$, we get:
+	\begin{align*}
+	\text{Im}(C_x) &= \frac{\sqrt{\pi/3}}{2c_1c_2} \left[ (1+s_{1z})s_{2y} + (1+s_{2z})s_{1y} \right] \\
+	\text{Im}(C_y) &= -\frac{\sqrt{\pi/3}}{2c_1c_2} \left[ (1+s_{1z})s_{2x} + (1+s_{2z})s_{1x} \right]
+	\end{align*}
+	The terms in the brackets can be expanded:
+	\begin{align*}
+	(1+s_{1z})s_{2y} + (1+s_{2z})s_{1y} &= s_{2y} + s_{1y} + s_{1z}s_{2y} + s_{1y}s_{2z} \\
+	&= s_{1y} + s_{2y} + (s_{1y}s_{2z} - s_{1z}s_{2y}) + 2 s_{1z}s_{2y} \\
+	&= s_{1y} + s_{2y} + (\vec{s}_1 \times \vec{s}_2)_x + 2 s_{1z}s_{2y} \\
+	(1+s_{1z})s_{2x} + (1+s_{2z})s_{1x} &= s_{2x} + s_{1x} + s_{1z}s_{2x} + s_{2z}s_{1x} \\
+	&= s_{1x}+s_{2x} + (s_{1z}s_{2x} - s_{1x}s_{2z}) + 2 s_{1x}s_{2z} \\
+	&= s_{1x}+s_{2x} + (\vec{s}_1 \times \vec{s}_2)_y + 2 s_{1x}s_{2z}
+	\end{align*}
+	
+	\subsubsection{Analysis of $\ell=1$ contributions}
+	
+	The wave function's dependence on the direction $\hat{r}$ comes from terms with $\ell=1$, which behave like vectors. All terms derived from the expansion are vectorial and contribute to $\vec{C}_{\ell=1}$. There are no scalar ($\ell=0$) contributions like $\vec{s}_1 \cdot \vec{s}_2$.
+	
+	The components of the imaginary part of $\vec{C}$ can be grouped into distinct physical contributions:
+	\begin{align*}
+	\text{Im}(C_x) &= \frac{\sqrt{\pi/3}}{2c_1c_2} \left[ \underbrace{(s_{1y} + s_{2y})}_{\text{Sum of spins}} + \underbrace{(\vec{s}_1 \times \vec{s}_2)_x}_{\text{Spin correlation}} + \underbrace{2 s_{1z}s_{2y}}_{\text{Higher-order}} \right] \\
+	\text{Im}(C_y) &= -\frac{\sqrt{\pi/3}}{2c_1c_2} \left[ \underbrace{(s_{1x} + s_{2x})}_{\text{Sum of spins}} + \underbrace{(\vec{s}_1 \times \vec{s}_2)_y}_{\text{Spin correlation}} + \underbrace{2 s_{1x}s_{2z}}_{\text{Higher-order}} \right] \\
+	\text{Im}(C_z) &= \frac{\sqrt{\pi/3}}{2c_1c_2} \left[ \underbrace{(\vec{s}_1 \times \vec{s}_2)_z}_{\text{Spin correlation}} \right]
+	\end{align*}
+
+	The complete expression for the imaginary part of $\vec{C}$ is:
+	\begin{align*}
+	\text{Im}(C_x) &= \frac{\sqrt{\pi/3}}{2c_1c_2} \left[ (s_{1y} + s_{2y}) + (\vec{s}_1 \times \vec{s}_2)_x + 2 s_{1z}s_{2y} \right] \\
+	\text{Im}(C_y) &= -\frac{\sqrt{\pi/3}}{2c_1c_2} \left[ (s_{1x} + s_{2x}) + (\vec{s}_1 \times \vec{s}_2)_y + 2 s_{1x}s_{2z} \right] \\
+	\text{Im}(C_z) &= \frac{\sqrt{\pi/3}}{2c_1c_2} (\vec{s}_1 \times \vec{s}_2)_z
+	\end{align*}
 	\section{Conclusion}
 	
 	%\LaTeX{} \cite{MacGibbon_1998}

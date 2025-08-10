@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  25 JUL 2025 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  10 AUG 2025 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,6 +368,15 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen160
 \xmathstrut@box=\box54
 \xmathstrut@dim=\dimen161
+) (/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/tex/latex/tools/bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 ) (/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count288
@@ -375,23 +384,23 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./twisted_higgs.aux)
 \openout1 = `twisted_higgs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Info: Redefining \th on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Info: Redefining \th on input line 18.
  (/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/tex/latex/graphics/graphics.sty
@@ -426,11 +435,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 \Gin@req@height=\dimen164
 \Gin@req@width=\dimen165
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
  (/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -440,12 +449,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/nix/store/lga54lc1c2yx98c3vmxf2k64hv0vif7a-texlive-combined-full-2024-final/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
 
 [2]
-Overfull \hbox (1.846pt too wide) detected at line 100
+Overfull \hbox (1.846pt too wide) detected at line 101
 [][]
  []
 
 
-Overfull \hbox (169.92159pt too wide) detected at line 109
+Overfull \hbox (169.92159pt too wide) detected at line 110
 [][]
  []
 
@@ -454,13 +463,8 @@ Overfull \hbox (169.92159pt too wide) detected at line 109
 [3]
 
 [4]
-Overfull \hbox (49.89955pt too wide) detected at line 299
-\OT1/cmr/m/n/12 ([] \OMS/cmsy/m/n/12 ^^A []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^Q \OT1/cmr/m/n/12 = [] = [] = [] = []
- []
-
-
-Overfull \hbox (65.12608pt too wide) detected at line 316
-[][]
+Overfull \hbox (61.65099pt too wide) detected at line 303
+\OT1/cmr/m/n/12 (\OML/cmm/b/it/12 ^^[ \OMS/cmsy/m/n/12 ^^A []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^Q\OT1/cmr/m/n/12 (\OML/cmm/b/it/12 s[]\OT1/cmr/m/n/12 ) = [] [] = \OMS/cmsy/m/n/12 ^^@ [] []\OML/cmm/m/it/12 e[] [] \OMS/cmsy/m/n/12 ^^@ [] [] []
  []
 
 
@@ -468,28 +472,46 @@ Overfull \hbox (65.12608pt too wide) detected at line 316
 [5]
 
 [6]
+Overfull \hbox (1.11714pt too wide) detected at line 371
+[][]
+ []
+
+
 
 [7]
 
-[8] (./twisted_higgs.aux)
+[8]
+
+[9]
+Overfull \hbox (51.37758pt too wide) detected at line 503
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@[] [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2[](\OML/cmm/m/it/12 c[]s[] [] ^^^[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 s[]c[] [] ^^^[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 c[]s[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 c[]s[]\OT1/cmr/m/n/12 )
+ []
+
+
+
+[10]
+
+[11]
+
+[12] (./twisted_higgs.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5276 strings out of 473201
- 87585 string characters out of 5689025
- 501491 words of memory out of 5000000
- 28460 multiletter control sequences out of 15000+600000
- 576960 words of font info for 84 fonts, out of 8000000 for 9000
+ 5380 strings out of 473201
+ 89053 string characters out of 5689025
+ 498397 words of memory out of 5000000
+ 28556 multiletter control sequences out of 15000+600000
+ 580539 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,15n,70p,416b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfbx1200.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfbx1728.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm1200.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm1440.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm2074.pfb>
-Output written on twisted_higgs.pdf (8 pages, 213502 bytes).
+ 63i,17n,70p,394b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfbx1200.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfbx1440.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfbx1728.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm0800.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm1200.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm1440.pfb></nix/store/p1yahfldxg4ayc58dflvrrssbmpikhg0-texlive-combined-full-2024-final-texmfdist/fonts/type1/public/cm-super/sfrm2074.pfb>
+Output written on twisted_higgs.pdf (12 pages, 292504 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
